@@ -1,6 +1,6 @@
 // add date to top of screen
 var today = moment();
-$("#currentDay").text(today.format("dddd, MMMM Do"));
+$("#currentDay").text(today.format('dddd MMMM Do, YYYY'));
 
 // Create Hour Task Objects
 var tasks = {
