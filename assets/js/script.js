@@ -41,10 +41,10 @@ var pullTasks = function() {
 // Work with Tasks
 var createTask = function(taskText, hourTask) {
     var taskTasks = hourTask.find(".task");
-    var taskArea = $("<p>")
+    var taskPlace = $("<p>")
         .addClass("description")
         .text(taskText)
-    hourTask.html(taskArea);
+    hourTask.html(taskPlace);
 }
 
 var checkTasks = function() {
@@ -65,3 +65,16 @@ var checkTasks = function() {
         }
     })
 };
+
+var returnTextArea = function(textareaElement) {
+    var taskInfo = textareaElement.closest(".task-info");
+    var textArea = taskInfo.find("textarea");
+
+    var hour = taskInfo.attr("id");
+    var text = textArea.val().trim();
+
+    tasks [hour] = [text];
+    pushTasks();
+
+    createTask(text, taskInfo);
+}
