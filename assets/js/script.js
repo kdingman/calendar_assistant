@@ -28,3 +28,21 @@ $("#17 .description").val(localStorage.getItem("17"));
 $("#18 .description").val(localStorage.getItem("18"));
 $("#19 .description").val(localStorage.getItem("19"));
 $("#20 .description").val(localStorage.getItem("20"));
+
+// Changing Time to correct format
+var hour7 = 7;
+var hour8 = 8;
+var hour9 = 9;
+var hour10 = 10;
+var hour11 = 11;
+var hour12 = 12;
+var hour13 = 1;
+var hour14 = 2;
+var hour15 = 3;
+var hour16 = 4;
+var hour17 = 5;
+var hour18 = 6;
+var hour19 = 7;
+
+var currentHour = moment().format('H');
+
