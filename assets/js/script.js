@@ -37,3 +37,31 @@ var pullTasks = function() {
     // Double check all tasks are pulled and pushed
         checkTasks()
 }
+
+// Work with Tasks
+var createTask = function(taskText, hourTask) {
+    var taskTasks = hourTask.find(".task");
+    var taskArea = $("<p>")
+        .addClass("description")
+        .text(taskText)
+    hourTask.html(taskArea);
+}
+
+var checkTasks = function() {
+
+    var currentHour = moment().hour();
+        $(".task-info").each(function () {
+            var taskHour = parseInt($(this).attr("id"));
+
+        // past, present, future tasks
+        if(taskHour < currentHour) {
+            $(this).removeClass(["present", "future"]).addClass("past");
+        }
+        else if(taskHour === currentHour) {
+            $(this).removeClass(["past", "future"]).addClass("present");
+        }
+        else {
+            $(this).removeClass(["past", "present"]).addClass("future");
+        }
+    })
+};
