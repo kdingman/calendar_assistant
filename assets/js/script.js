@@ -99,7 +99,7 @@ var currentHour = moment().format('H');
         $("11-text").addClass("past");
     }
     else if(currentHour = time11){
-        $(11-text").addClass("present");
+        $("11-text").addClass("present");
     }
 
     // Noon
@@ -184,5 +184,4 @@ var currentHour = moment().format('H');
     }
     else if(currentHour = time19){
         $("19-text").addClass("present");
-    }
     }
