@@ -25,10 +25,10 @@ $(document).ready(function() {
     $("#17 .description").val(localStorage.getItem("17"));
     $("#18 .description").val(localStorage.getItem("18"));
     $("#19 .description").val(localStorage.getItem("19"));
-})
+});
 
 // Create Hour Task Objects
-var tasks = {
+var taskTimes = {
     "7": [],
     "8": [],
     "9": [],
