@@ -74,3 +74,6 @@ function timeTracker() {
 
     }
         timeTracker();
+
+    // check current time
+    var duration = setInterval(timeTracker, 15000);
