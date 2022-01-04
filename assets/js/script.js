@@ -44,4 +44,33 @@ var taskTimes = {
     "19": [],
 };
 
+function timeTracker() {
 
+    // check on current time
+    var currentTime = moment().hour();
+
+    // loop through time blocks
+    $(".time-block").each(function() {
+        var taskTimes = parseInt($(this).attr("id").split("hour")[1]);
+        console.log(taskTimes, currentTime)
+
+        // past, present, future via HTML and CSS
+        if(taskTimes < currentTime) {
+            $(this).addClass("past");
+            $(this).removeClass("present");
+            $(this).removeClass("future");
+        }
+        else if(taskTimes === currentTime) {
+            $(this).removeClass("past");
+            $(this).addClass("present");
+            $(this).removeClass("future");
+        }
+        else {
+            $(this).removeClass("past");
+            $(this).removeClass("present");
+            $(this).addClass("future");
+        }
+    })
+
+    }
+        timeTracker();
