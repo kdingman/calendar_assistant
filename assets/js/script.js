@@ -3,7 +3,7 @@ var today = moment();
 $("#currentDay").text(today.format("dddd, MMMM Do"));
 
 // Create Hour Task Objects
-var tasks = {
+var taskTimes = {
     "7": [],
     "8": [],
     "9": [],
@@ -18,43 +18,34 @@ var tasks = {
     "18": [],
     "19": [],
 };
-// Work with Tasks
-var createTask = function(taskText, hourTask) {
-    var taskTasks = hourTask.find(".task");
-    var taskPlace = $("<p>")
-        .addClass("description")
-        .text(taskText)
-    hourTask.html(taskPlace);
-}
 
-var checkTasks = function() {
+function timeTracker() {
 
-    var currentHour = moment().hour();
-        $(".task-info").each(function () {
-            var taskHour = parseInt($(this).attr("id"));
+    // check on current time
+    var currentTime = moment().hour();
 
-        // past, present, future tasks
-        if(taskHour < currentHour) {
-            $(this).removeClass(["present", "future"]).addClass("past");
+    // loop through time blocks
+    $(".time-block").each(function() {
+        var taskTimes = parseInt($(this).attr("id").split("hour")[1]);
+        console.log(taskTimes, currentTime)
+
+        // past, present, future via HTML and CSS
+        if(taskTimes < currentTime) {
+            $(this).addClass("past");
+            $(this).removeClass("present");
+            $(this).removeClass("future");
         }
-        else if(taskHour === currentHour) {
-            $(this).removeClass(["past", "future"]).addClass("present");
+        else if(taskTimes === currentTime) {
+            $(this).removeClass("past");
+            $(this).addClass("present");
+            $(this).removeClass("future");
         }
         else {
-            $(this).removeClass(["past", "present"]).addClass("future");
+            $(this).removeClass("past");
+            $(this).removeClass("present");
+            $(this).addClass("future");
         }
     })
-};
 
-var returnTextArea = function(textareaElement) {
-    var taskInfo = textareaElement.closest(".task-info");
-    var textArea = taskInfo.find("textarea");
-
-    var hour = taskInfo.attr("id");
-    var text = textArea.val().trim();
-
-    tasks [hour] = [text];
-    pushTasks();
-
-    createTask(text, taskInfo);
-}
+    }
+        timeTracker();
