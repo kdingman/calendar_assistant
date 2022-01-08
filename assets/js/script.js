@@ -4,25 +4,26 @@ var currentTime = moment().hour();
 var militaryTime = [7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19];
 // click button
 var saveBtn = document.querySelector(".saveBtn");
-    console.log(currentHour);
+    console.log(currentTime);
 
 // Create loops to manage tasks with times, past, present, future
-    document.querySelector("#currentDay").textContent = moment().format('LLL');
-
+    function manageTasks(){
+        $(".time-block").each(function(){
     // loop through time blocks
-        if(currentTime < militaryTime) {
-            $(this).addClass(".past");
-            $(this).removeClass(".present");
-            $(this).removeClass(".future");
+        if(currentTime > militaryTime) {
+            $(this).classList.add(".past");
+            $(this).classList.remove(".present");
+            $(this).classList.remove(".future");
         }
-        else if(currentTime === militaryTime) {
-            $(this).removeClass(".past");
-            $(this).addClass(".present");
-            $(this).removeClass(".future");
+        else if(currentTime < militaryTime) {
+            $(this).classList.remove(".past");
+            $(this).classList.remove(".present");
+            $(this).classList.add(".future");
         }
         else {
-            $(this).removeClass(".past");
-            $(this).removeClass(".present");
-            $(this).addClass(".future");
+            $(this).classList.remove(".past");
+            $(this).classList.add(".present");
+            $(this).classList.remove(".future");
         }
-    })
+    });
+    }
