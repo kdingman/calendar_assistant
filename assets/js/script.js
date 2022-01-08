@@ -9,9 +9,6 @@ $(".saveBtn").on("click", function() {
 })
 // Set Military Time Array
 var militaryTime = [7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19];
-// click button
-var saveBtn = document.querySelector(".saveBtn");
-    console.log(currentTime);
 
 // Create loops to manage tasks with times, past, present, future
     function manageTasks(){
