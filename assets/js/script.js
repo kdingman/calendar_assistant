@@ -11,20 +11,18 @@ var saveBtn = document.querySelector(".saveBtn");
 
     // loop through time blocks
         if(currentTime < militaryTime) {
-            $(this).addClass("past");
-            $(this).removeClass("present");
-            $(this).removeClass("future");
+            $(this).addClass(".past");
+            $(this).removeClass(".present");
+            $(this).removeClass(".future");
         }
         else if(currentTime === militaryTime) {
-            $(this).removeClass("past");
-            $(this).addClass("present");
-            $(this).removeClass("future");
+            $(this).removeClass(".past");
+            $(this).addClass(".present");
+            $(this).removeClass(".future");
         }
         else {
-            $(this).removeClass("past");
-            $(this).removeClass("present");
-            $(this).addClass("future");
+            $(this).removeClass(".past");
+            $(this).removeClass(".present");
+            $(this).addClass(".future");
         }
     })
-
-
