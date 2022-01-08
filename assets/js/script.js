@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // add date to top of screen
 var today = moment();
 $("#currentDay").text(today.format('dddd MMMM Do, YYYY'));
@@ -102,3 +103,11 @@ function timeTracker() {
 
     // check current time
     var duration = setInterval(timeTracker, 15000);
+=======
+// add date and time to top of screen
+var currentHour = moment().format('LLL');
+var militaryTime = [7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19];
+var saveBtn = document.querySelector(".saveBtn");
+    console.log(currentHour);
+
+>>>>>>> feature/times
