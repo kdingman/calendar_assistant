@@ -1,41 +1,21 @@
-// add date to top of screen
-var today = moment();
-$("#currentDay").text(today.format("dddd, MMMM Do"));
+// add date and time to top of screen
+var currentTime = moment().hour();
+// Set Military Time Array
+var militaryTime = [7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19];
+// click button
+var saveBtn = document.querySelector(".saveBtn");
+    console.log(currentHour);
 
-// Create Hour Task Objects
-var taskTimes = {
-    "7": [],
-    "8": [],
-    "9": [],
-    "10": [],
-    "11": [],
-    "12": [],
-    "13": [],
-    "14": [],
-    "15": [],
-    "16": [],
-    "17": [],
-    "18": [],
-    "19": [],
-};
-
-function timeTracker() {
-
-    // check on current time
-    var currentTime = moment().hour();
+// Create loops to manage tasks with times, past, present, future
+    document.querySelector("#currentDay").textContent = moment().format('LLL');
 
     // loop through time blocks
-    $(".time-block").each(function() {
-        var taskTimes = parseInt($(this).attr("id").split("hour")[1]);
-        console.log(taskTimes, currentTime)
-
-        // past, present, future via HTML and CSS
-        if(taskTimes < currentTime) {
+        if(currentTime < militaryTime) {
             $(this).addClass("past");
             $(this).removeClass("present");
             $(this).removeClass("future");
         }
-        else if(taskTimes === currentTime) {
+        else if(currentTime === militaryTime) {
             $(this).removeClass("past");
             $(this).addClass("present");
             $(this).removeClass("future");
