@@ -25,4 +25,3 @@ var saveBtn = document.querySelector(".saveBtn");
             $(this).removeClass(".present");
             $(this).addClass(".future");
         }
-    })
