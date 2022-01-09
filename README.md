@@ -25,9 +25,10 @@ Create a simple application that can be used to scheudle meetings, tasks, etc to
 
 **Code**
 
-Live Site: https://kdingman.github.io/calendar_assistant/
-GitHub Https: https://github.com/kdingman/calendar_assistant.git
-GitHub SSH: git@github.com:kdingman/calendar_assistant.git
-Live Site: https://kdingman.github.io/calendar_assistant/
-GitHub Https: https://github.com/kdingman/calendar_assistant.git
-GitHub SSH: git@github.com:kdingman/calendar_assistant.git
+**Live Site:** https://kdingman.github.io/calendar_assistant/
+
+**GitHub Https:** https://github.com/kdingman/calendar_assistant.git
+
+**GitHub SSH:** git@github.com:kdingman/calendar_assistant.git
+
+
