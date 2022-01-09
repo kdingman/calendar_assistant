@@ -50,5 +50,3 @@
     manageTasks();
 
     var interval = setInterval(manageTasks, 19000);
-
-    localStorage.clear();
